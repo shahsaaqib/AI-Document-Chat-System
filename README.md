@@ -8,6 +8,7 @@ Built with a **Retrieval-Augmented Generation (RAG)** pipeline for accurate, con
 
 ## 🏗️ Architecture Overview
 
+```mermaid
 flowchart TD
     A["Upload PDF 📄"] --> B["Extract Text (pdf.js-extract) 🧩"]
     B --> C["Chunk Text (LangChain Splitter) 🔍"]
@@ -18,6 +19,8 @@ flowchart TD
     E --> G
     H --> I["Stream Response 🧠"]
     I --> J["Render in React Chat UI 💬"]
+```
+
 
 ---
 
