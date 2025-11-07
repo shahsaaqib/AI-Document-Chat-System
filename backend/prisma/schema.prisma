@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Document {
+  id          String     @id @default(cuid())
+  filename    String
+  text        String
+  createdAt   DateTime   @default(now())
+  embeddings  Embedding[]
+}
+
+model Embedding {
+  id          String     @id @default(cuid())
+  documentId  String
+  content     String
+  vector      Unsupported("vector") // pgvector column type
+  Document    Document  @relation(fields: [documentId], references: [id])
+}

@@ -1,0 +1,79 @@
+
+/src/generated/prisma
+# ============================================================
+#  Node / Fastify Backend — .gitignore
+#  Project: AI Doc Chat
+# ============================================================
+
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+coverage/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Prisma artifacts
+prisma/generated/
+prisma/migrations/
+*.db
+*.sqlite
+*.sqlite-journal
+
+# TypeScript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Logs
+logs/
+*.log
+*.log.*
+log/
+debug.log
+error.log
+out.log
+
+# Cache
+.cache/
+.tmp/
+.temp/
+.vscode/
+.DS_Store
+.idea/
+*.swp
+
+# Uploads (temporary files)
+tmp/
+*.pdf
+
+# Docker
+docker-compose.override.yml
+docker-data/
+.docker/
+*.pid
+*.seed
+*.pid.lock
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Misc
+# Ignore compiled Prisma clients (they can be regenerated)
+@prisma/client/
+prisma/.env
+
+# Local test and runtime files
+test-results/
+*.local.json
+*.local.yaml

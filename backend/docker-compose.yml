@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  db:
+    image: ankane/pgvector:latest
+    container_name: pgvector-db
+    restart: always
+    environment:
+      POSTGRES_USER: saaqib
+      POSTGRES_PASSWORD: saaqib123
+      POSTGRES_DB: ai_doc_chat
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
