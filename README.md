@@ -8,18 +8,16 @@ Built with a **Retrieval-Augmented Generation (RAG)** pipeline for accurate, con
 
 ## 🏗️ Architecture Overview
 
-```mermaid
 flowchart TD
-    A[📄 Upload PDF] --> B[🧩 Text Extraction via pdf.js-extract]
-    B --> C[🔍 Chunking via LangChain Splitter]
-    C --> D[🔢 Embedding via OpenRouter Embedding API]
-    D --> E[(🗄️ PostgreSQL + pgvector)]
-    F[💬 User Query] --> G[🔎 Similarity Search in pgvector]
-    G --> H[🤖 LLM via OpenRouter Chat API]
+    A["Upload PDF 📄"] --> B["Extract Text (pdf.js-extract) 🧩"]
+    B --> C["Chunk Text (LangChain Splitter) 🔍"]
+    C --> D["Generate Embeddings (OpenRouter) 🔢"]
+    D --> E["Store in PostgreSQL + pgvector 🗄️"]
+    F["User Query 💬"] --> G["Similarity Search 🔎"]
+    G --> H["Query LLM (Chat API) 🤖"]
     E --> G
-    H --> I[🧠 AI Response Streamed to Frontend]
-    I --> J[💬 Chat UI (React + Tailwind)]
-```
+    H --> I["Stream Response 🧠"]
+    I --> J["Render in React Chat UI 💬"]
 
 ---
 
